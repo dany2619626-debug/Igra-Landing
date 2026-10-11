@@ -128,7 +128,7 @@ section{ position: relative !important; }
 .header-cta{ font-size:15px !important; padding: 12px 24px !important; }
 
 /* ============================================================
-   HERO (нова подредба: заглавие → изображение → останало)
+   HERO
    ============================================================ */
 .hero{
   padding: 64px 0 100px !important;
@@ -171,18 +171,15 @@ section{ position: relative !important; }
 }
 .old-price {
   color: var(--ink-soft) !important;
-//  text-decoration: line-through !important;
   font-size: 1.3rem !important;
   display: block !important;
 }
 .new-price {
   color: var(--ink-soft) !important;
-//  font-family: 'Fredoka One', cursive !important;
   font-size: 3rem !important;
   line-height: 1 !important;
 }
-.price-note { color: var(--ink-soft) !important; font-size: 1.3rem !important; 
-}
+.price-note { color: var(--ink-soft) !important; font-size: 1.3rem !important; }
 
 .hero-visual{
   position:relative !important;
@@ -232,11 +229,195 @@ section{ position: relative !important; }
   object-fit: contain !important;
   display:block !important;
 }
-.bonusi{ font-size: 32px !important; margin: 0, 0, 20px  }
+.bonusi{ font-size: 32px !important; margin: 0 0 20px !important; }
 .hero p.lead{ font-size: 32px !important; color: var(--ink-soft) !important; max-width: 1000px !important; margin-bottom: 20px !important; }
 .hero-ctas{ display:flex !important; flex-wrap: wrap !important; gap: 16px !important; margin-bottom: 26px !important; justify-content: center !important; }
 .hero-trust{ display:flex !important; flex-wrap:wrap !important; gap: 18px !important; font-size: 21px !important; color: var(--ink-soft) !important; font-weight: 700 !important; justify-content: center !important; }
 .hero-trust span{ display:inline-flex !important; align-items:center !important; gap:6px !important; }
+
+/* ---------- Hero: гаранция ---------- */
+.hero-guarantee{
+  max-width: 900px !important;
+  margin: 34px auto 0 !important;
+  background: var(--green-pale) !important;
+  border: 2px solid var(--green) !important;
+  border-left: 8px solid var(--green-dark) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 24px 30px !important;
+  font-size: 18px !important;
+  color: var(--ink) !important;
+  text-align: center !important;
+  box-shadow: var(--shadow-soft) !important;
+  line-height: 1.55 !important;
+}
+.hero-guarantee b{ color: var(--green-dark) !important; font-weight: 900 !important; }
+
+/* ---------- Hero: метод ---------- */
+.hero-method{
+  max-width: 900px !important;
+  margin: 22px auto 0 !important;
+  background: var(--white) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 26px 30px !important;
+  font-size: 17px !important;
+  color: var(--ink-soft) !important;
+  box-shadow: var(--shadow-soft) !important;
+  text-align: left !important;
+  border: 2px solid var(--blue-pale) !important;
+  line-height: 1.65 !important;
+}
+.hero-method b{ color: var(--blue-dark) !important; }
+
+/* ---------- Hero: съдържание на комплекта ---------- */
+.kit-contents{
+  max-width: 900px !important;
+  margin: 32px auto 0 !important;
+  background: linear-gradient(135deg, var(--yellow-pale), var(--orange-pale)) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 38px 36px !important;
+  text-align: left !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 2px solid var(--yellow) !important;
+}
+.kit-contents h3{
+  font-size: clamp(20px, 2.6vw, 26px) !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  margin-bottom: 20px !important;
+  color: var(--ink) !important;
+  letter-spacing: .02em !important;
+}
+.kit-contents h3.kit-bonus-title{
+  color: var(--red-deep) !important;
+  margin-top: 34px !important;
+  margin-bottom: 20px !important;
+}
+.kit-contents > p{
+  font-size: 17px !important;
+  color: var(--ink) !important;
+  text-align: center !important;
+  margin-bottom: 8px !important;
+  line-height: 1.6 !important;
+}
+.kit-contents ul{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+.kit-contents li{
+  background: rgba(255,255,255,0.8) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 15px 20px !important;
+  font-size: 15.5px !important;
+  color: var(--ink) !important;
+  border-left: 5px solid var(--orange) !important;
+  line-height: 1.55 !important;
+}
+.kit-contents li b{ color: var(--orange-deep) !important; font-weight: 800 !important; }
+.kit-contents .kit-note{
+  margin-top: 24px !important;
+  font-size: 15px !important;
+  color: var(--ink-soft) !important;
+  text-align: left !important;
+  font-style: italic !important;
+  background: rgba(255,255,255,0.55) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 16px 20px !important;
+  border-left: 5px solid var(--blue) !important;
+  line-height: 1.6 !important;
+}
+
+/* ---------- Hero: ПОЛЗИ ---------- */
+.hero-benefits{
+  max-width: 900px !important;
+  margin: 22px auto 0 !important;
+  background: linear-gradient(135deg, var(--blue-pale), var(--green-pale)) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 36px 36px 32px !important;
+  text-align: left !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 2px solid var(--blue) !important;
+}
+.hero-benefits h3{
+  font-size: clamp(20px, 2.6vw, 26px) !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  margin-bottom: 10px !important;
+  color: var(--blue-dark) !important;
+  letter-spacing: .04em !important;
+}
+.hero-benefits .benefits-sub{
+  text-align: center !important;
+  font-size: 16.5px !important;
+  color: var(--ink) !important;
+  margin-bottom: 24px !important;
+  line-height: 1.6 !important;
+}
+.hero-benefits ul{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+.hero-benefits li{
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  background: rgba(255,255,255,0.78) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 14px 18px !important;
+  font-size: 15.5px !important;
+  color: var(--ink) !important;
+  line-height: 1.55 !important;
+  border-left: 5px solid var(--green) !important;
+}
+.hero-benefits li::before{
+  content: '✓' !important;
+  flex-shrink: 0 !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background: var(--green) !important;
+  color: var(--white) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+  margin-top: 1px !important;
+}
+.hero-benefits .benefits-outro{
+  margin-top: 22px !important;
+  font-size: 15.5px !important;
+  color: var(--ink) !important;
+  line-height: 1.65 !important;
+  background: rgba(255,255,255,0.78) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 18px 20px !important;
+  border-left: 5px solid var(--orange) !important;
+}
+.hero-benefits .benefits-outro b{ color: var(--orange-deep) !important; }
+
+/* ---------- Hero: CTA след ПОЛЗИ ---------- */
+.hero-benefits-cta{
+  max-width: 900px !important;
+  margin: 30px auto 0 !important;
+  text-align: center !important;
+}
+.hero-benefits-cta .btn{
+  font-size: 23px !important;
+  padding: 20px 44px !important;
+  box-shadow: 0 16px 32px -8px rgba(241,80,62,0.5) !important;
+}
+.hero-benefits-cta-note{
+  margin-top: 14px !important;
+  font-size: 15px !important;
+  color: var(--ink-soft) !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 14px !important;
+  justify-content: center !important;
+}
 
 /* ============================================================
    PROBLEM
@@ -266,10 +447,48 @@ section{ position: relative !important; }
 .solution .eyebrow{ background: var(--green-pale) !important; color: var(--green-dark) !important; }
 .solution-intro{ max-width: 620px !important; margin: 0 auto 44px !important; text-align:center !important; color: var(--ink-soft) !important; font-size: 18px !important; }
 
-.gallery{ display:grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; margin-bottom: 64px !important; }
-.gallery .photo{ border-radius: var(--radius-md) !important; overflow:hidden !important; aspect-ratio: 4/3 !important; box-shadow: var(--shadow-soft) !important; background: var(--blue-pale) !important; border-width: 1px; border-style: solid; border-color: var(--ink-soft) }
+.gallery{ display:grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; margin-bottom: 56px !important; }
+.gallery .photo{ border-radius: var(--radius-md) !important; overflow:hidden !important; aspect-ratio: 4/3 !important; box-shadow: var(--shadow-soft) !important; background: var(--blue-pale) !important; border-width: 1px; border-style: solid; border-color: var(--ink-soft); }
 .gallery .photo img{ width:100% !important; height:100% !important; object-fit: cover !important; }
 .gallery .photo.img-error{ background: linear-gradient(135deg, var(--orange-pale), var(--green-pale)) !important; }
+
+/* ---------- ЗАЩО ЗАЕДНО? ---------- */
+.why-zaedno{
+  max-width: 900px !important;
+  margin: 0 auto 64px !important;
+  background: var(--white) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 42px 46px !important;
+  text-align: left !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 2px solid var(--green) !important;
+  border-left: 8px solid var(--green-dark) !important;
+}
+.why-zaedno h3{
+  font-size: clamp(22px, 2.8vw, 30px) !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  margin-bottom: 26px !important;
+  color: var(--green-dark) !important;
+  letter-spacing: .04em !important;
+}
+.why-zaedno p{
+  font-size: 16.5px !important;
+  color: var(--ink) !important;
+  line-height: 1.7 !important;
+  margin-bottom: 16px !important;
+}
+.why-zaedno p:last-child{
+  margin-bottom: 0 !important;
+  background: var(--green-pale) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 18px 22px !important;
+  border-left: 5px solid var(--green) !important;
+  font-weight: 700 !important;
+  color: var(--green-dark) !important;
+}
+.why-zaedno p strong,
+.why-zaedno p b{ color: var(--green-dark) !important; font-weight: 800 !important; }
 
 .mechanism-title{ text-align:center !important; margin-bottom: 30px !important; }
 .mechanism-title span{
@@ -296,13 +515,13 @@ section{ position: relative !important; }
 .acr-back p{ font-size: 13.5px !important; line-height: 1.45 !important; font-weight: 600 !important; }
 
 /* ============================================================
-   КАК СЕ ИГРАЕ — вертикални стъпки + голяма игрова визуализация
+   КАК СЕ ИГРАЕ
    ============================================================ */
 .how-title{ text-align:center !important; font-size: 45px !important; font-weight: 800 !important; margin-bottom: 40px !important; }
 
 .how-layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;   /* лявата колона е по-тясна, дясната по-широка */
+  grid-template-columns: 1fr 1.2fr;
   gap: 50px;
   align-items: center;
   margin-bottom: 30px;
@@ -312,14 +531,13 @@ section{ position: relative !important; }
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 70px;   /* повече разстояние между стъпките */
+  gap: 70px;
 }
 
-/* вертикална линия между стъпките */
 .steps-vertical::before {
   content: '';
   position: absolute;
-  left: 25px;            /* средата на кръгчетата */
+  left: 25px;
   top: 26px;
   bottom: 45px;
   width: 3px;
@@ -371,7 +589,6 @@ section{ position: relative !important; }
   color: var(--ink-soft);
 }
 
-/* Игрова визуализация — по-голяма */
 .game-demo {
   position: relative;
   display: flex;
@@ -469,7 +686,7 @@ section{ position: relative !important; }
    BENEFITS
    ============================================================ */
 .benefits{ background: var(--white) !important; }
-.benefits .eyebrow{ background: white !important; color: var(--orange-deep) !important; box-shadow: 0 0px 0px 2px var(--ink-soft) }
+.benefits .eyebrow{ background: white !important; color: var(--orange-deep) !important; box-shadow: 0 0px 0px 2px var(--ink-soft); }
 .benefit-grid{ display:grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 26px !important; }
 .benefit-card{
   padding: 38px 30px !important; border-radius: var(--radius-lg) !important; position:relative !important;
@@ -480,6 +697,9 @@ section{ position: relative !important; }
 .benefit-card:nth-child(1){ background: var(--blue-pale) !important; }
 .benefit-card:nth-child(2){ background: var(--yellow-pale) !important; }
 .benefit-card:nth-child(3){ background: var(--green-pale) !important; }
+.benefit-card:nth-child(4){ background: var(--orange-pale) !important; }
+.benefit-card:nth-child(5){ background: var(--red-pale) !important; }
+.benefit-card:nth-child(6){ background: linear-gradient(135deg, var(--blue-pale) 0%, var(--green-pale) 100%) !important; }
 .benefit-card .badge{
   width: 58px !important; height:58px !important; border-radius: 18px !important; display:flex !important; align-items:center !important; justify-content:center !important;
   font-size: 28px !important; margin-bottom: 22px !important; box-shadow: var(--shadow-soft) !important;
@@ -487,6 +707,9 @@ section{ position: relative !important; }
 .benefit-card:nth-child(1) .badge{ background: var(--blue) !important; }
 .benefit-card:nth-child(2) .badge{ background: var(--yellow-deep) !important; }
 .benefit-card:nth-child(3) .badge{ background: var(--green) !important; }
+.benefit-card:nth-child(4) .badge{ background: var(--orange) !important; }
+.benefit-card:nth-child(5) .badge{ background: var(--red) !important; }
+.benefit-card:nth-child(6) .badge{ background: linear-gradient(135deg, var(--blue-dark) 0%, var(--green-dark) 100%) !important; }
 .benefit-card h3{ font-size: 20px !important; font-weight: 800 !important; margin-bottom: 12px !important; }
 .benefit-card p{ font-size: 15px !important; color: var(--ink-soft) !important; }
 
@@ -514,11 +737,33 @@ section{ position: relative !important; }
 .story .eyebrow{ background: var(--blue-pale) !important; color: var(--blue-dark) !important; }
 .story h2{ font-size: clamp(26px,3.6vw,36px) !important; font-weight: 800 !important; margin-bottom: 20px !important; }
 .story p{ color: var(--ink-soft) !important; font-size: 16.5px !important; margin-bottom: 16px !important; }
+.story p.story-greeting{ color: var(--ink) !important; font-weight: 700 !important; font-size: 18px !important; }
+.story p.story-quote-label{ color: var(--ink) !important; font-weight: 700 !important; margin-bottom: 12px !important; }
+
+/* Цитат на приятелката */
+.story-friend-quote{
+  margin: 22px 0 26px !important;
+  padding: 22px 26px !important;
+  background: var(--blue-pale) !important;
+  border-radius: var(--radius-md) !important;
+  border-left: 6px solid var(--blue) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  color: var(--blue-dark) !important;
+  box-shadow: var(--shadow-soft) !important;
+  line-height: 1.5 !important;
+  font-style: italic !important;
+}
+
+/* Финален цитат на детето */
 .story blockquote{
   margin-top: 24px !important; padding: 22px 26px !important; background: var(--white) !important; border-radius: var(--radius-md) !important;
   border-left: 6px solid var(--yellow) !important; font-family: var(--font-display) !important; font-weight: 600 !important;
   font-size: 20px !important; color: var(--ink) !important; box-shadow: var(--shadow-soft) !important;
+  line-height: 1.5 !important;
 }
+.story blockquote b{ color: var(--orange-deep) !important; }
 
 /* ============================================================
    GUARANTEE
@@ -535,7 +780,6 @@ section{ position: relative !important; }
   box-shadow: var(--shadow-pop) !important; overflow: hidden !important;
 }
 .guarantee-icon img { width: 90% !important; height: 90% !important; object-fit: contain !important; border-radius: 50% !important; }
-@keyframes pulseSoft{ 0%,100%{ box-shadow: 0 0 0 0 rgba(63,184,120,0.35); } 50%{ box-shadow: 0 0 0 16px rgba(63,184,120,0); } }
 .guarantee-box h2{ font-size: 28px !important; font-weight: 800 !important; margin-bottom: 16px !important; }
 .guarantee-box p{ color: var(--ink-soft) !important; font-size: 17px !important; max-width: 560px !important; margin: 0 auto !important; }
 
@@ -573,7 +817,7 @@ section{ position: relative !important; }
 .offer-fine{ margin-top: 16px !important; font-size: 13px !important; color: var(--ink-soft) !important; display:flex !important; gap:16px !important; justify-content:center !important; flex-wrap:wrap !important; }
 
 /* ============================================================
-   FAQ - SIMPLIFIED ANIMATION (synchronized)
+   FAQ
    ============================================================ */
 .faq{ background: var(--white) !important; }
 .faq .eyebrow{ background: var(--blue-pale) !important; color: var(--blue-dark) !important; }
@@ -628,7 +872,7 @@ section{ position: relative !important; }
   font-size: 15px !important; 
 }
 .faq-item.open .faq-a{ 
-  max-height: 200px !important; 
+  max-height: 260px !important; 
 }
 
 /* ============================================================
@@ -643,7 +887,6 @@ section{ position: relative !important; }
 .final-cta .btn-primary{ box-shadow: 0 14px 30px -6px rgba(0,0,0,0.4) !important; }
 .final-cta .float-star{ position:absolute !important; font-size: 30px !important; opacity:.5 !important; animation: tileFloat 5s ease-in-out infinite !important; }
 
-/* Стилове за новия CTA (преместен от стария final-cta) */
 .cta-new {
   background: linear-gradient(135deg, var(--blue-pale), var(--green-pale)) !important;
   text-align:center !important;
@@ -665,7 +908,6 @@ section{ position: relative !important; }
   box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2) !important;
 }
 
-/* Стилове за финалната CTA (новата структура) */
 .final-cta .container {
   max-width: 800px !important;
   margin: 0 auto !important;
@@ -739,6 +981,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
 .r-child:nth-child(3){ transition-delay: .25s !important; }
 .r-child:nth-child(4){ transition-delay: .35s !important; }
 .r-child:nth-child(5){ transition-delay: .45s !important; }
+.r-child:nth-child(6){ transition-delay: .55s !important; }
 
 @media (prefers-reduced-motion: reduce){
   *{ animation: none !important; transition: none !important; }
@@ -754,7 +997,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
   .pain-grid{ grid-template-columns: repeat(2,1fr) !important; }
   .gallery{ grid-template-columns: repeat(3,1fr) !important; }
   .acronym{ grid-template-columns: repeat(3,1fr) !important; }
-  .benefit-grid{ grid-template-columns: 1fr !important; }
+  .benefit-grid{ grid-template-columns: repeat(2, 1fr) !important; }
   .story .wrap{ grid-template-columns: 1fr !important; }
   .story-photo{ max-width: 320px !important; margin: 0 auto !important; }
 
@@ -793,6 +1036,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
     height: 44px;
     font-size: 16px;
   }
+  .why-zaedno{ padding: 34px 32px !important; }
 }
 
 @media (max-width: 640px){
@@ -825,6 +1069,52 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
   .game-photo img, .game-photo.img-error { height: 130px; }
 
   .friends-grid{ grid-template-columns: 1fr !important; }
+  .benefit-grid{ grid-template-columns: 1fr !important; }
+
+  /* Hero допълнения – мобилни корекции */
+  .hero-guarantee{ padding: 18px 20px !important; font-size: 16px !important; margin-top: 26px !important; }
+  .hero-method{ padding: 20px 22px !important; font-size: 15.5px !important; }
+  .kit-contents{ padding: 26px 20px !important; }
+  .kit-contents li{ font-size: 14.5px !important; padding: 13px 16px !important; }
+  .kit-contents h3{ font-size: 20px !important; }
+
+  /* ПОЛЗИ – мобилни корекции */
+  .hero-benefits{ padding: 26px 20px !important; margin-top: 18px !important; }
+  .hero-benefits h3{ font-size: 20px !important; }
+  .hero-benefits .benefits-sub{ font-size: 15px !important; }
+  .hero-benefits li{ font-size: 14.5px !important; padding: 13px 15px !important; gap: 10px !important; }
+  .hero-benefits li::before{ width: 22px !important; height: 22px !important; font-size: 12px !important; }
+  .hero-benefits .benefits-outro{ font-size: 14.5px !important; padding: 15px 16px !important; }
+
+  /* CTA след ПОЛЗИ – мобилни корекции */
+  .hero-benefits-cta .btn{
+    font-size: 18px !important;
+    padding: 16px 24px !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+  }
+  .hero-benefits-cta-note{
+    font-size: 13.5px !important;
+    gap: 10px !important;
+  }
+
+  /* ЗАЩО ЗАЕДНО – мобилни корекции */
+  .why-zaedno{ padding: 26px 20px !important; margin-bottom: 48px !important; border-left-width: 6px !important; }
+  .why-zaedno h3{ font-size: 22px !important; margin-bottom: 20px !important; }
+  .why-zaedno p{ font-size: 15px !important; line-height: 1.65 !important; margin-bottom: 14px !important; }
+  .why-zaedno p:last-child{ padding: 15px 16px !important; font-size: 14.5px !important; }
+
+  /* Предимства – мобилни корекции */
+  .benefit-card{ padding: 28px 22px !important; }
+  .benefit-card .badge{ width: 52px !important; height: 52px !important; font-size: 24px !important; margin-bottom: 18px !important; border-radius: 14px !important; }
+  .benefit-card h3{ font-size: 18px !important; }
+  .benefit-card p{ font-size: 14.5px !important; }
+
+  /* История – мобилни корекции */
+  .story p{ font-size: 15.5px !important; }
+  .story p.story-greeting{ font-size: 16.5px !important; }
+  .story-friend-quote{ padding: 18px 20px !important; font-size: 16px !important; margin: 18px 0 22px !important; }
+  .story blockquote{ padding: 18px 20px !important; font-size: 17px !important; }
 }
 </style>
 </head>
@@ -849,7 +1139,6 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
 
     <p class="lead"><b>Без сълзи над буквара. Без напрежение. Само 15 минути игра ЗАЕДНО на ден — и след 30 дни ще видиш резултата.</b></p>
 
-    <!-- Изображение (без рамка, прозрачно) -->
     <div class="hero-visual">
         <img
           src="https://content.app-sources.com/s/161491553052563671/uploads/Images/IGRA_2026_v_copy-8354542.png"
@@ -884,6 +1173,57 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
       <span>🚚 Доставка с куриер</span>
       <span>💳 Наложен платеж</span>
     </div>
+
+    <div class="hero-guarantee">
+      <b>90-ДНЕВНА ГАРАНЦИЯ ЗА ВРЪЩАНЕ НА ПАРИТЕ:</b><br>
+      <b>Ако не видиш забележимо подобрение в уменията за четене на твоето дете, върни продукта и ще ти върнем парите без да задаваме въпроси.</b>
+    </div>
+
+    <div class="hero-method">
+      <p>В играта <b>„Четенето научавам, докато се забавлявам“</b> е използван новият уникален метод <b>ЗАЕДНО</b>. Той съчетава учене и активна игра, в която се състезават заедно родител и дете. Методът дава добри резултати, защото е напълно съобразен с възрастта, интересите и желанието за игра и движение на детето. Играта помага на детето ти лесно и бързо да се научи да чете, докато се смее и играе.</p>
+    </div>
+
+    <div class="kit-contents">
+      <h3>КАКВО СЪДЪРЖА КОМПЛЕКТЪТ</h3>
+      <p>Комплектът съдържа шест упражнителни табла с най-често използваните <b>360 срички и едносрични думи</b>, подредени по сложност.</p>
+
+      <h3 class="kit-bonus-title">БЕЗПЛАТНИ БОНУСИ</h3>
+      <ul>
+        <li><b>Бонус 1.</b> „Кой написа нашата АЗБУКА“ — детска илюстрирана книга, която описва историята за създаването на нашата писменост и съдържа стихотворения за нашите първоучители Св. Св. Кирил и Методий и за Св. Климент Охридски.</li>
+        <li><b>Бонус 2.</b> Тридесетдневен игрови календар, който служи за отбелязване на победите и спечелените точки в състезанието кой ще се сети за повече думи с уцелената сричка.</li>
+        <li><b>Бонус 3.</b> СРИЧНИК — Ловци на думи — книга-помощник за намиране на повече думи с определена сричка.</li>
+        <li><b>Бонус 4.</b> ТРИ ИГРИ с разпечатани забавни задачи, с картинки, за проверка нивото на детето ти.</li>
+        <li><b>Бонус 5.</b> Грамота за твоето дете за усъвършенстване на умението за бързо и гладко четене. Може да я надпишете и да я подарите на детето си като мотивираща награда за неговия напредък.</li>
+        <li><b>Бонус 6.</b> Талон за закупуване на първата книга ЗАЕДНО с детето ти, с тематика, която е интересна специално за него. Книгата, която ще прочетете заедно, като се редувате да четете на глас.</li>
+        <li><b>Бонус 7.</b> Талон с 25% отстъпка за повторно закупуване на наш продукт.</li>
+      </ul>
+
+      <p class="kit-note">Усвояването на четенето е дълъг процес, който изисква след напредъка с играта детето да продължи да се упражнява с четене на по-дълги текстове и да премине на следващото ниво — четене с разбиране.</p>
+    </div>
+
+    <div class="hero-benefits">
+      <h3>ПОЛЗИ</h3>
+      <p class="benefits-sub">Методът <b>ЗАЕДНО</b> е нов уникален подход, благодарение на който:</p>
+      <ul>
+        <li>Детето ти ще се научи да чете бързо и лесно, докато играе и се забавлява.</li>
+        <li>Пестиш време, защото играта е кратка, но детето изпълнява поставените задачи с желание и напредва.</li>
+        <li>Няма стрес и принуда, защото детето играе с желание, тъй като играта е най-естествената дейност в ежедневието на детето.</li>
+        <li>Пестиш пари — не се налага да записваш детето си на скъпи частни уроци и да купуваш допълнителни помагала.</li>
+        <li>Можете да играете по всяко време и не е обвързано с точен график.</li>
+        <li>Укрепвате връзката с детето си, докато играете с него, и се научавате да виждате света през неговите очи и да го разбирате много по-добре.</li>
+      </ul>
+      <p class="benefits-outro"><b>Състезанието</b> дава шанс на детето да се стреми към победа, да става по-уверено във способностите си, да обогатява речника си, да работи със сричковата система и да подобрява произношението и концентрацията си.</p>
+    </div>
+
+    <div class="hero-benefits-cta">
+      <a href="poruchka.html" class="btn btn-primary">🎯 Поръчай сега с -25% и вземи 7 бонуса</a>
+      <p class="hero-benefits-cta-note">
+        <span>🚚 Доставка с куриер</span>
+        <span>💳 Наложен платеж</span>
+        <span>↩️ 90 дни гаранция</span>
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -936,7 +1276,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
       <div class="photo r-child"><img src="https://content.app-sources.com/s/161491553052563671/uploads/Images/ChatGPT_Image_11.09.2026_г._13_15_41-9122194.png" alt="Комплектът на играта ЧЕТЕНЕТО научавам, докато се забавлявам" onerror="this.parentElement.classList.add('img-error')" data-fallback="📷 Снимка 4"></div>
     </div>
 
-<div class="mechanism-title reveal"><span>Разгледай буква по буква — докосни всяко квадратче</span></div>
+    <div class="mechanism-title reveal"><span>Разгледай буква по буква — докосни всяко квадратче</span></div>
     <div class="acronym reveal reveal-stagger">
       <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">З</span><span class="word">заедно</span></div><div class="acr-face acr-back"><p>Започнете да играете заедно с детето си по 15–20 минути всеки ден — вместо да се мъчите над буквара.</p></div></div></div>
       <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">А</span><span class="word">активно</span></div><div class="acr-face acr-back"><p>Хвърляте мека топка по цветното табло — сричката, върху която попадне, се прочита на глас.</p></div></div></div>
@@ -945,10 +1285,19 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
       <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">Н</span><span class="word">ново знание</span></div><div class="acr-face acr-back"><p>Новият метод ЗАЕДНО помага на детето бързо, лесно и с желание да направи първите си стъпки в четенето.</p></div></div></div>
       <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">О</span><span class="word">отлично</span></div><div class="acr-face acr-back"><p>Отново в дома ти ще има спокойствие — детето чете уверено и с истинско удоволствие.</p></div></div></div>
     </div>
+
+    <div class="why-zaedno reveal">
+      <h3>ЗАЩО ЗАЕДНО?</h3>
+      <p>Защото от научаването на буквите до гладкото четене има една голяма и важна стъпка, която трябва да извървите заедно с детето си.</p>
+      <p>То има нужда от подкрепа и търпение, за да усвои свързването на звуците в срички, след това да свърже сричките в думи, думите в изречение и накрая правилно да разбере смисъла на прочетеното.</p>
+      <p>Всички очакват щом детето научи буквите, веднага да започне да чете по срички. Но сричковата система за него е като нова непозната азбука. Замислете се само — азбуката се състои от 30 различни букви, а сричковата система е съставена от стотици различни срички.</p>
+      <p>В действителност в програма не е предвидено необходимото време за опознаването на сричковата система, а точно това е моментът, в който има нужда от повече упражнения. Затова детето се нуждае от вашата подкрепа, търпение и време.</p>
+      <p>То трябва да поиграе, да опознае сричките, да се научи да ги създава, произнася и използва, за да гради с тях нови думи. Всичко това е възможно с помощта на играта. После четенето се научава много по-бързо и лесно.</p>
+    </div>
+
     <h3 class="how-title reveal">Как се играе?</h3>
 
 <div class="how-layout">
-  <!-- Лява колона: 5 стъпки вертикално -->
   <div class="steps-vertical reveal reveal-stagger">
     <div class="step-vertical r-child">
       <div class="num">1</div>
@@ -987,7 +1336,6 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
     </div>
   </div>
 
-  <!-- Дясна колона: игрова визуализация -->
   <div class="game-demo" aria-hidden="true">
     <div class="game-board">
       <div class="tile">ВЕ</div><div class="tile">ЧЕ</div><div class="tile">МО</div>
@@ -1005,7 +1353,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Защо работи</span>
-      <h2>Трите предимства на играта ЗАЕДНО</h2>
+      <h2>ШЕСТТЕ ПРЕДИМСТВА НА ИГРАТА ЗАЕДНО</h2>
     </div>
     <div class="benefit-grid reveal reveal-stagger">
       <div class="benefit-card r-child">
@@ -1023,6 +1371,21 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
         <h3>Сближава родител и дете</h3>
         <p>15 минути игра всеки ден изграждат специална връзка. Детето ти ще те чака за тази игра — и ще обожава времето прекарано заедно с теб.</p>
       </div>
+      <div class="benefit-card r-child">
+        <div class="badge">🧩</div>
+        <h3>Учи се да чете, докато строи думи</h3>
+        <p>Чрез игра детето ти се учи да чете, обогатява речника си, подобрява произношението си и използва сричките като тухли от конструктор, с които гради думи.</p>
+      </div>
+      <div class="benefit-card r-child">
+        <div class="badge">♟️</div>
+        <h3>Развива стратегическо мислене</h3>
+        <p>Обмисля с коя сричка знае повече думи и се стреми да я улучи, за да спечели точка. Така развива стратегическото си мислене, креативността и координацията си.</p>
+      </div>
+      <div class="benefit-card r-child">
+        <div class="badge">🌟</div>
+        <h3>Гради бъдеще</h3>
+        <p>Играта допринася за изграждане на самосъзнание на успешен човек, което има решаващо значение за бъдещето на детето.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1037,12 +1400,23 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
       <div class="sticker">Резултат до 30 дни</div>
     </div>
     <div class="reveal">
-      <span class="eyebrow">Историята зад ЗАЕДНО</span>
-      <h2>Създадено от майка, за нейния син — сега и за твоето дете</h2>
-      <p>Аз съм учителка и автор на детски книжки, но преди всичко — майка. Като дете самата аз имах трудности с четенето и дълго се страхувах да чета пред съучениците си, за да не се изложа.</p>
-      <p>Когато синът ми започна да се учи да чете, не исках той да преживее същото притеснение. Затова превърнах упражнението в игра с топка и цветно табло със срички.</p>
-      <p>След около 30 дни игра видях как четенето по срички започна да му се отдава леко и естествено. Но най-ценното за мен беше друго - той се увличаше в играта и казваше:</p>
-      <blockquote><b>„Мамо, хайде да играем!“</b> <br>вместо <b>„Не искам да чета.“</b></blockquote>
+      <span class="eyebrow">Историята зад играта</span>
+      <h2>Историята зад играта</h2>
+      <p class="story-greeting">Здравейте! Казвам се Даниела Велинова и съм учителка и автор на детски книжки, но преди всичко съм майка.</p>
+      <p>Когато бях дете, самата аз имах трудности с четенето и проблемите ми продължиха, докато моята приятелка не ми сподели как лесно се е научила да чете.</p>
+      <p class="story-quote-label">Тя ми каза:</p>
+      <div class="story-friend-quote">
+        „Аз чета по срички, а не буква по буква. Също докато изговарям едната дума, вече разглеждам следващата.“
+      </div>
+      <p>Веднага опитах и разбрах, че четенето може да бъде много по-лесно, но само ако се използва правилния начин. Затова, когато синът ми започна да се учи да чете, не исках той да преживее същото притеснение като мен.</p>
+      <p>Тогава специално за него превърнах упражнението в игра състезание, с топка и цветно табло със срички.</p>
+      <p>След тридесет дни игра, заедно с него, видях как четенето по срички започна да му се отдава леко и естествено.</p>
+      <p>Но най-ценното за мен беше това, че той се увличаше в играта, искаше още да продължим и казваше:</p>
+      <blockquote>
+        <b>„Мамо, хайде да играем!“</b> <br>
+        вместо <br>
+        <b>„Не искам да чета!“</b>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -1052,8 +1426,9 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
   <div class="wrap">
     <div class="guarantee-box reveal">
       <div class="guarantee-icon"><img src="https://content.app-sources.com/s/161491553052563671/uploads/Images/ChatGPT_Image_Sep_9_2026_06_51_48_PM-8969816.png" alt="Гаранция за връщане"></div>
-      <h2>Гаранция</h2>
-      <p>Дай ша нс на детето си да се научи лесно да чете с играта. Ако след като се запознаеш с нея прецениш, че не е подходяща за твоето семейство, разполагаш с 30 дни, в които можеш да се възползваш от правото си на връщане.</p>
+      <h2>90-дневна гаранция за връщане на парите</h2>
+      <p>Дай шанс на детето си да се научи лесно да чете с играта. Ако след като се запознаеш с нея прецениш, че не е подходяща за твоето семейство, разполагаш с <b>90 дни</b>, в които можеш да се възползваш от правото си на връщане.</p>
+      <p style="margin-top:14px !important;"><b>Ако не видиш забележимо подобрение в уменията за четене на твоето дете, върни продукта и ще ти върнем парите без да задаваме въпроси.</b></p>
     </div>
   </div>
 </section>
@@ -1067,7 +1442,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
     </div>
     <div class="offer-card reveal">
       <div class="offer-top">
-        <h3>Комплект ЗАЕДНО + 4 бонуса</h3>
+        <h3>Комплект ЗАЕДНО + 7 бонуса</h3>
         <p>Игрови табла, топки и всичко нужно, за да започнете ЗАЕДНО още днес</p>
         <div class="price-row">
           <span class="price-old">36 €</span>
@@ -1076,26 +1451,27 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
         <span class="price-badge">-25% · спестяваш 9 €</span>
       </div>
       <ul class="includes">
-        <li><span class="ico">🎲</span><span><b>Игрови комплект ЗАЕДНО</b><br>6 табла със срички по степен на трудност, 2 меки топки, правила и система за точкуване</span></li>
-        <li><span class="ico">📘</span><span><b>Бонус 1:</b> 3 PDF игри</span><span class="val">5 €</span></li>
-        <li><span class="ico">📅</span><span><b>Бонус 2:</b> 3 песни за азбуката и за сричките</span><span class="val">4 €</span></li>
-        <li><span class="ico">🃏</span><span><b>Бонус 3:</b> 30-дневен игрови календар</span><span class="val">5 €</span></li>
-        <li><span class="ico">📖</span><span><b>Бонус 4:</b> "Буквите ОЦВЕТИ" — книжка с буквите</span><span class="val">6,60 €</span></li>
-        <li><span class="ico">🃏</span><span><b>Бонус 5:</b> „Ловци на думи“ — карти с игрови предизвикателства</span><span class="val">5 €</span></li>
-        <li><span class="ico">🃏</span><span><b>Бонус 6:</b> Как да играем — указание</span><span class="val">5 €</span></li>
+        <li><span class="ico">🎲</span><span><b>Игрови комплект ЗАЕДНО</b><br>6 табла с 360 срички и едносрични думи, подредени по сложност, 2 меки топки, правила и система за точкуване</span></li>
+        <li><span class="ico">📘</span><span><b>Бонус 1:</b> „Кой написа нашата АЗБУКА“ — илюстрирана детска книга</span><span class="val">5 €</span></li>
+        <li><span class="ico">📅</span><span><b>Бонус 2:</b> 30-дневен игрови календар за отбелязване на победите</span><span class="val">4 €</span></li>
+        <li><span class="ico">🃏</span><span><b>Бонус 3:</b> СРИЧНИК — „Ловци на думи“ — книга-помощник</span><span class="val">5 €</span></li>
+        <li><span class="ico">📖</span><span><b>Бонус 4:</b> ТРИ ИГРИ с разпечатани забавни задачи и картинки</span><span class="val">6,60 €</span></li>
+        <li><span class="ico">🏅</span><span><b>Бонус 5:</b> Грамота за твоето дете за постигнат напредък</span><span class="val">5 €</span></li>
+        <li><span class="ico">🎟️</span><span><b>Бонус 6:</b> Талон за първата книга ЗАЕДНО с детето ти</span><span class="val">5 €</span></li>
+        <li><span class="ico">💳</span><span><b>Бонус 7:</b> Талон с 25% отстъпка за повторно закупуване</span><span class="val">—</span></li>
       </ul>
       <div class="offer-bottom">
         <a href="poruchka.html" class="btn btn-primary btn-block">Вземи играта ЗАЕДНО — 27 €</a>
         <div class="offer-fine">
           <span>🚚 Доставка с куриер и наложен платеж</span>
-          <span>↩️ 30 дни право на връщане</span>
+          <span>↩️ 90 дни право на връщане</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================ 8. NEW CTA (преместен от стария final-cta) ============================================================ -->
+<!-- ============================================================ 8. NEW CTA ============================================================ -->
 <section class="cta-new section-pad" id="cta-new">
   <div class="wrap reveal">
     <h2>Започнете първата си игра ЗАЕДНО още днес</h2>
@@ -1112,7 +1488,6 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
       <h2>Често задавани въпроси</h2>
     </div>
     <div class="faq-list reveal">
-      <!-- Всички отговори са скрити по подразбиране -->
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Ами ако детето ми вече познава буквите, но чете буква по буква?<span class="plus">+</span></button>
         <div class="faq-a"><p>Точно за този етап е създадена играта ЗАЕДНО. Тя е следващата стъпка след буквите — учи детето да прави прехода от отделни звуци към цели срички, по естествен и забавен начин.</p></div>
@@ -1137,7 +1512,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
   </div>
 </section>
 
-<!-- ============================================================ 10. FINAL CTA (емоционален завършек) ============================================================ -->
+<!-- ============================================================ 10. FINAL CTA ============================================================ -->
 <section class="final-cta section-pad" id="final-cta">
   <span class="float-star" style="top:14%; left:8%;">✦</span>
   <span class="float-star" style="top:65%; left:88%;">✦</span>
@@ -1155,10 +1530,10 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
     </p>
     <div class="reveal visible">
       <a href="poruchka.html" class="btn-main" style="font-size:1.35rem !important; padding:22px 60px !important;">
-        🎯 Вземи „ЧЕТЕНЕТО научавам" + 5 бонуса за 27 €!
+        🎯 Вземи „ЧЕТЕНЕТО научавам" + 7 бонуса за 27 €!
       </a>
       <p style="margin-top:20px !important; color:rgba(255,255,255,.7) !important; font-size:.88rem !important;">
-        Само 27 € · Доставка с куриер · Наложен платеж · 30-дневна гаранция за връщане
+        Само 27 € · Доставка с куриер · Наложен платеж · 90-дневна гаранция за връщане
       </p>
     </div>
   </div>
@@ -1214,7 +1589,7 @@ footer .copy{ width:100% !important; text-align:center !important; font-size: 12
 </footer>
 
 <script>
-// FAQ accordion (независимо отваряне/затваряне)
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(function(btn){
   btn.addEventListener('click', function(){
     var item = btn.closest('.faq-item');
@@ -1222,15 +1597,12 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
     var isOpen = item.classList.contains('open');
     
     if(isOpen){
-      // Затваряме само този елемент
       item.classList.remove('open');
       btn.setAttribute('aria-expanded','false');
       answer.style.maxHeight = '0px';
     } else {
-      // Отваряме само този елемент
       item.classList.add('open');
       btn.setAttribute('aria-expanded','true');
-      // Задаваме височината според съдържанието за плавна анимация
       answer.style.maxHeight = answer.scrollHeight + 'px';
     }
   });
