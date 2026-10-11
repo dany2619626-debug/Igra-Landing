@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЗАЕДНО — Четенето научавам, докато се забавлявам</title>
+<meta name="description" content="Игра за родители и деца от 5 до 8 години. Детето ти ще се научи да чете по срички — играейки ЗАЕДНО с теб, само 15 минути на ден.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ЗАЕДНО — landing page styles
+   Палитра: бяло, синьо, жълто, зелено, оранжево, червено
+   ============================================================ */
+
+:root{
+  --white:      #FFFFFF !important;
+  --cream:      #FFF9EE !important;
+  --ink:        #2A2540 !important;
+  --ink-soft:   #5C5670 !important;
+
+  --blue:       #2E9BF0 !important;
+  --blue-dark:  #1B6FB8 !important;
+  --blue-pale:  #E7F4FE !important;
+
+  --yellow:     #FFCB3D !important;
+  --yellow-deep:#F5A623 !important;
+  --yellow-pale:#FFF4D6 !important;
+
+  --green:      #3FB878 !important;
+  --green-dark: #278552 !important;
+  --green-pale: #E4F8ED !important;
+
+  --orange:     #FF8A3D !important;
+  --orange-deep:#E96B1C !important;
+  --orange-pale:#FFEBDC !important;
+
+  --red:        #F1503E !important;
+  --red-deep:   #D63A2A !important;
+  --red-pale:   #FFE7E3 !important;
+
+  --font-display:'Unbounded', system-ui, sans-serif !important;
+  --font-body:   'Nunito', system-ui, sans-serif !important;
+
+  --radius-sm: 14px !important;
+  --radius-md: 22px !important;
+  --radius-lg: 34px !important;
+  --shadow-soft: 0 12px 30px -10px rgba(42,37,64,0.18) !important;
+  --shadow-pop:  0 18px 40px -12px rgba(42,37,64,0.28) !important;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after{ box-sizing: border-box !important; margin: 0 !important; padding: 0 !important; }
+html{ scroll-behavior: smooth !important; -webkit-text-size-adjust: 100% !important; }
+body{
+  font-family: var(--font-body) !important;
+  color: var(--ink) !important;
+  background: var(--white) !important;
+  line-height: 1.6 !important;
+  font-size: 17px !important;
+  overflow-x: hidden !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+img{ max-width: 100% !important; height: auto !important; }
+button{ font-family: inherit !important; cursor: pointer !important; border: none !important; background: none !important; }
+a{ color: inherit !important; text-decoration: none !important; }
+ul{ list-style: none !important; }
+h1,h2,h3,h4{ font-family: var(--font-display) !important; line-height: 1.18 !important; color: var(--ink) !important; }
+section{ position: relative !important; }
+:focus-visible{ outline: 3px solid var(--blue-dark) !important; outline-offset: 3px !important; border-radius: 6px !important; }
+
+.wrap{ max-width: 1180px !important; margin: 0 auto !important; padding: 0 24px !important; }
+.eyebrow{
+  display: inline-flex !important; align-items:center !important; gap:8px !important;
+  font-family: var(--font-display) !important; font-weight: 700 !important;
+  font-size: 21px !important; letter-spacing: 0.06em !important; text-transform: uppercase !important;
+  padding: 8px 18px !important; border-radius: 999px !important;
+  margin-bottom: 50px !important;
+}
+.section-head{ max-width: 700px !important; margin: 0 auto 52px !important; text-align: center !important; }
+.section-head h2{ font-size: clamp(28px, 4vw, 42px) !important; font-weight: 800 !important; margin-bottom: 14px !important; }
+.section-head p{ color: var(--ink-soft) !important; font-size: 18px !important; }
+.section-pad{ padding: 96px 0 !important; }
+
+/* ---------- Skip link ---------- */
+.skip-link{
+  position:absolute !important; left:-999px !important; top:0 !important; z-index:999 !important;
+  background:var(--ink) !important; color:var(--white) !important; padding:12px 20px !important; border-radius:0 0 10px 0 !important;
+}
+.skip-link:focus{ left:0 !important; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display: inline-flex !important; align-items:center !important; justify-content:center !important; gap:10px !important;
+  font-family: var(--font-display) !important; font-weight: 700 !important; font-size: 21px !important;
+  padding: 18px 34px !important; border-radius: 999px !important;
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .2s ease !important;
+  white-space: nowrap !important;
+}
+.btn-primary{
+  background: var(--red) !important;
+  color: var(--white) !important;
+  box-shadow: 0 14px 28px -8px color-mix(in srgb, var(--blue-dark) 30%, transparent) !important;
+}
+.btn-primary:hover{ transform: translateY(-3px) scale(1.03) !important; box-shadow: 0 20px 34px -8px rgba(241,80,62,0.6) !important; }
+.btn-primary:active{ transform: translateY(0) scale(0.99) !important; }
+.btn-ghost{
+  background: var(--white) !important; color: var(--blue-dark) !important;
+  border: 2px solid var(--blue) !important;
+}
+.btn-ghost:hover{ background: var(--blue-pale) !important; transform: translateY(-2px) !important; }
+.btn-block{ width:100% !important; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position: sticky !important; top:0 !important; z-index: 60 !important;
+  background: rgba(255,255,255,0.9) !important; backdrop-filter: blur(10px) !important;
+  border-bottom: 2px solid var(--yellow-pale) !important;
+}
+.site-header .wrap{ display:flex !important; align-items:center !important; justify-content:space-between !important; padding-top:14px !important; padding-bottom:14px !important; }
+.logo{ display:flex !important; align-items:center !important; gap:10px !important; font-family: var(--font-display) !important; font-weight:800 !important; font-size:20px !important; color: var(--ink) !important; }
+.logo-mechi { width: 40px !important; height: 40px !important; object-fit: contain !important; display: block !important; }
+.header-cta{ font-size:15px !important; padding: 12px 24px !important; }
+
+/* ============================================================
+   HERO (нова подредба: заглавие → изображение → останало)
+   ============================================================ */
+.hero{
+  padding: 64px 0 100px !important;
+  background: linear-gradient(180deg, var(--blue-pale) 0%, var(--white) 78%) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+.hero .wrap{
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.hero-eyebrow{ background: var(--white) !important; color: var(--blue-dark) !important; box-shadow: var(--shadow-soft) !important; }
+.hero h1{
+  font-size: clamp(34px, 5vw, 56px) !important; font-weight: 800 !important; margin-bottom: 30px !important;
+  max-width: 900px !important;
+}
+.hero h1 .hl{
+  background: none !important;
+  padding: 0 !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--yellow) !important;
+  text-decoration-thickness: 16px !important;
+  text-underline-offset: 12px !important;
+  color: inherit !important;
+}
+
+.hero-price-box {
+  display: inline-block !important;
+  background: rgba(255,255,255,.1) !important;
+  border: 2px solid color-mix(in srgb, var(--blue) 50%, transparent) !important;
+  border-radius: 16px !important;
+  padding: 16px 32px !important;
+  margin-bottom: 32px !important;
+  animation: bounceIn 1s .4s ease both !important;
+  box-shadow: 0 0px 28px 8px color-mix(in srgb, var(--blue-dark) 30%, transparent) !important;
+}
+.old-price {
+  color: var(--ink-soft) !important;
+//  text-decoration: line-through !important;
+  font-size: 1.3rem !important;
+  display: block !important;
+}
+.new-price {
+  color: var(--ink-soft) !important;
+//  font-family: 'Fredoka One', cursive !important;
+  font-size: 3rem !important;
+  line-height: 1 !important;
+}
+.price-note { color: var(--ink-soft) !important; font-size: 1.3rem !important; 
+}
+
+.hero-visual{
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 25px auto -20px !important;
+}
+.hero-img-link{
+  display:block !important;
+  width: 100% !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+.hero-img{
+  width: 100% !important;
+  transform: scale(1.5);
+  height: auto !important;
+  object-fit: contain !important;
+  display:block !important;
+}
+.hero-img.img-error{
+  aspect-ratio: 6176 / 4692 !important;
+  background: linear-gradient(135deg, var(--yellow-pale), var(--blue-pale)) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height: 280px !important;
+  font-family: var(--font-display) !important;
+  font-weight:700 !important;
+  font-size: 14px !important;
+  color: var(--blue-dark) !important;
+  text-align:center !important;
+  padding: 18px !important;
+}
+.hero-img.img-error::after{
+  content: attr(data-fallback) !important;
+}
+.hero-bonus-img{
+  width: 100% !important;
+  transform: scale(1.0);
+  height: auto !important;
+  object-fit: contain !important;
+  display:block !important;
+}
+.bonusi{ font-size: 32px !important; margin: 0, 0, 20px  }
+.hero p.lead{ font-size: 32px !important; color: var(--ink-soft) !important; max-width: 1000px !important; margin-bottom: 20px !important; }
+.hero-ctas{ display:flex !important; flex-wrap: wrap !important; gap: 16px !important; margin-bottom: 26px !important; justify-content: center !important; }
+.hero-trust{ display:flex !important; flex-wrap:wrap !important; gap: 18px !important; font-size: 21px !important; color: var(--ink-soft) !important; font-weight: 700 !important; justify-content: center !important; }
+.hero-trust span{ display:inline-flex !important; align-items:center !important; gap:6px !important; }
+
+/* ============================================================
+   PROBLEM
+   ============================================================ */
+.problem{ background: var(--white) !important; }
+.problem .eyebrow{ background: color-mix(in srgb, var(--blue) 20%, transparent) !important; color: var(--red-deep) !important; }
+.pain-grid{ display:grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 25px !important; margin-bottom: 48px !important; }
+.pain-card{
+  background: var(--yellow-pale) !important; border-radius: var(--radius-md) !important; padding: 30px 24px !important;
+  text-align:center !important; border: 2px solid transparent !important; border-left: 5px solid var(--red) !important;
+  transition: transform .25s ease, border-color .25s ease !important;
+}
+.pain-card:hover{ transform: translateY(-6px) !important; border-color: var(--yellow) !important; }
+.pain-card .icon{ font-size: 34px !important; margin-bottom: 14px !important; display:block !important; }
+.pain-card h3{ font-size: 17px !important; font-weight: 800 !important; margin-bottom: 8px !important; }
+.pain-card p{ font-size: 14.5px !important; color: var(--ink-soft) !important; }
+.bridge-line{
+  max-width: 700px !important; margin: 0 auto !important; text-align:center !important;
+  font-size: 20px !important; font-weight: 700 !important; color: var(--ink) !important;
+  padding: 26px 32px !important; background: var(--yellow-pale) !important; border-radius: var(--radius-md) !important;
+}
+
+/* ============================================================
+   SOLUTION
+   ============================================================ */
+.solution{ background: linear-gradient(180deg, var(--white) 0%, var(--green-pale) 100%) !important; }
+.solution .eyebrow{ background: var(--green-pale) !important; color: var(--green-dark) !important; }
+.solution-intro{ max-width: 620px !important; margin: 0 auto 44px !important; text-align:center !important; color: var(--ink-soft) !important; font-size: 18px !important; }
+
+.gallery{ display:grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; margin-bottom: 64px !important; }
+.gallery .photo{ border-radius: var(--radius-md) !important; overflow:hidden !important; aspect-ratio: 4/3 !important; box-shadow: var(--shadow-soft) !important; background: var(--blue-pale) !important; border-width: 1px; border-style: solid; border-color: var(--ink-soft) }
+.gallery .photo img{ width:100% !important; height:100% !important; object-fit: cover !important; }
+.gallery .photo.img-error{ background: linear-gradient(135deg, var(--orange-pale), var(--green-pale)) !important; }
+
+.mechanism-title{ text-align:center !important; margin-bottom: 30px !important; }
+.mechanism-title span{
+  font-family: var(--font-display) !important; font-weight: 700 !important; font-size: 15px !important;
+  text-transform: uppercase !important; letter-spacing: .06em !important; color: var(--green-dark) !important;
+}
+.acronym{ display:grid !important; grid-template-columns: repeat(6, 1fr) !important; gap: 14px !important; margin-bottom: 70px !important; perspective: 1200px !important; }
+.acr-tile{ height: 190px !important; position:relative !important; }
+.acr-inner{
+  position:relative !important; width:100% !important; height:100% !important; text-align:center !important;
+  transition: transform .6s cubic-bezier(.4,.2,.2,1) !important; transform-style: preserve-3d !important;
+  border-radius: var(--radius-md) !important; cursor: pointer !important;
+}
+.acr-tile:hover .acr-inner, .acr-tile.flipped .acr-inner{ transform: rotateY(180deg) !important; }
+.acr-face{
+  position:absolute !important; inset:0 !important; border-radius: var(--radius-md) !important;
+  display:flex !important; align-items:center !important; justify-content:center !important; flex-direction:column !important;
+  backface-visibility: hidden !important; padding: 14px !important; box-shadow: var(--shadow-soft) !important;
+}
+.acr-front{ background: var(--white) !important; border: 3px solid var(--green) !important; }
+.acr-front .letter{ font-family: var(--font-display) !important; font-size: 46px !important; font-weight: 800 !important; color: var(--green-dark) !important; }
+.acr-front .word{ font-size: 12px !important; color: var(--ink-soft) !important; font-weight: 700 !important; margin-top: 6px !important; text-transform: uppercase !important; letter-spacing: .04em !important; }
+.acr-back{ background: var(--green) !important; color: var(--white) !important; transform: rotateY(180deg) !important; }
+.acr-back p{ font-size: 13.5px !important; line-height: 1.45 !important; font-weight: 600 !important; }
+
+/* ============================================================
+   КАК СЕ ИГРАЕ — вертикални стъпки + голяма игрова визуализация
+   ============================================================ */
+.how-title{ text-align:center !important; font-size: 45px !important; font-weight: 800 !important; margin-bottom: 40px !important; }
+
+.how-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;   /* лявата колона е по-тясна, дясната по-широка */
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.steps-vertical {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;   /* повече разстояние между стъпките */
+}
+
+/* вертикална линия между стъпките */
+.steps-vertical::before {
+  content: '';
+  position: absolute;
+  left: 25px;            /* средата на кръгчетата */
+  top: 26px;
+  bottom: 45px;
+  width: 3px;
+  background: var(--yellow);
+  border-radius: 3px;
+  z-index: 0;
+}
+
+.step-vertical {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.step-vertical .num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--white);
+  box-shadow: var(--shadow-soft);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-vertical:nth-child(1) .num { background: var(--orange); }
+.step-vertical:nth-child(2) .num { background: var(--blue); }
+.step-vertical:nth-child(3) .num { background: var(--green); }
+.step-vertical:nth-child(4) .num { background: var(--red); }
+.step-vertical:nth-child(5) .num { background: var(--yellow-deep); }
+
+.step-vertical .step-content h4 {
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.step-vertical .step-content p {
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+
+/* Игрова визуализация — по-голяма */
+.game-demo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.game-board {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  transform: rotate(-6deg);
+  z-index: 3;
+}
+
+.game-board .tile {
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 28px;
+  color: var(--white);
+  box-shadow: 0 8px 0 rgba(0,0,0,0.12), var(--shadow-soft);
+  animation: tileFloat 4.5s ease-in-out infinite;
+}
+
+.game-board .tile:nth-child(1) { background: var(--orange); animation-delay: 0s; }
+.game-board .tile:nth-child(2) { background: var(--blue); animation-delay: .3s; }
+.game-board .tile:nth-child(3) { background: var(--green); animation-delay: .6s; }
+.game-board .tile:nth-child(4) { background: var(--red); animation-delay: .9s; }
+.game-board .tile:nth-child(5) { background: var(--yellow); animation-delay: 1.2s; }
+.game-board .tile:nth-child(6) { background: var(--blue-dark); animation-delay: 1.5s; }
+.game-board .tile:nth-child(7) { background: var(--green-dark); animation-delay: 1.8s; }
+.game-board .tile:nth-child(8) { background: var(--red-deep); animation-delay: 2.1s; }
+.game-board .tile:nth-child(9) { background: var(--orange-deep); animation-delay: 2.4s; }
+
+@keyframes tileFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+.game-ball {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #fff, var(--yellow) 42%, var(--yellow-deep) 100%);
+  box-shadow: var(--shadow-pop);
+  z-index: 5;
+  animation: ballArc 3.2s ease-in-out infinite;
+}
+
+@keyframes ballArc {
+  0% { top: 6%; left: 4%; transform: scale(0.9) rotate(0deg); }
+  45% { top: -6%; left: 46%; transform: scale(1.05) rotate(160deg); }
+  70% { top: 40%; left: 66%; transform: scale(1) rotate(260deg); }
+  100% { top: 6%; left: 4%; transform: scale(0.9) rotate(360deg); }
+}
+
+.game-photo {
+  position: absolute;
+  right: -4%;
+  bottom: -6%;
+  width: 210px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-pop);
+  border: 6px solid var(--white);
+  z-index: 4;
+  transform: rotate(6deg);
+  background: var(--blue-pale);
+}
+
+.game-photo img { width: 100%; height: 220px; object-fit: cover; }
+.game-photo.img-error { background: linear-gradient(135deg, var(--yellow-pale), var(--blue-pale)); height: 220px; }
+.game-photo.img-error::after {
+  content: attr(data-fallback);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+}
+
+/* ============================================================
+   BENEFITS
+   ============================================================ */
+.benefits{ background: var(--white) !important; }
+.benefits .eyebrow{ background: white !important; color: var(--orange-deep) !important; box-shadow: 0 0px 0px 2px var(--ink-soft) }
+.benefit-grid{ display:grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 26px !important; }
+.benefit-card{
+  padding: 38px 30px !important; border-radius: var(--radius-lg) !important; position:relative !important;
+  transition: transform .3s ease, box-shadow .3s ease !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+.benefit-card:hover{ transform: translateY(-8px) rotate(-0.6deg) !important; box-shadow: var(--shadow-pop) !important; }
+.benefit-card:nth-child(1){ background: var(--blue-pale) !important; }
+.benefit-card:nth-child(2){ background: var(--yellow-pale) !important; }
+.benefit-card:nth-child(3){ background: var(--green-pale) !important; }
+.benefit-card .badge{
+  width: 58px !important; height:58px !important; border-radius: 18px !important; display:flex !important; align-items:center !important; justify-content:center !important;
+  font-size: 28px !important; margin-bottom: 22px !important; box-shadow: var(--shadow-soft) !important;
+}
+.benefit-card:nth-child(1) .badge{ background: var(--blue) !important; }
+.benefit-card:nth-child(2) .badge{ background: var(--yellow-deep) !important; }
+.benefit-card:nth-child(3) .badge{ background: var(--green) !important; }
+.benefit-card h3{ font-size: 20px !important; font-weight: 800 !important; margin-bottom: 12px !important; }
+.benefit-card p{ font-size: 15px !important; color: var(--ink-soft) !important; }
+
+/* ============================================================
+   STORY / SOCIAL PROOF
+   ============================================================ */
+.story{ background: var(--cream) !important; }
+.story .wrap{ display:grid !important; grid-template-columns: 0.8fr 1.2fr !important; gap: 56px !important; align-items:center !important; }
+.story-photo{ position:relative !important; }
+.story-photo .frame{
+  border-radius: var(--radius-lg) !important; overflow:hidden !important; box-shadow: var(--shadow-pop) !important;
+  border: 8px solid var(--white) !important; transform: rotate(-3deg) !important; aspect-ratio: 3/4 !important;
+  background: var(--blue-pale) !important;
+}
+.story-photo .frame img{ width:100% !important; height:100% !important; object-fit: cover !important; }
+.story-photo .frame.img-error{ background: linear-gradient(150deg, var(--yellow-pale), var(--orange-pale)) !important; }
+.story-photo .sticker{
+  position:absolute !important; bottom:-18px !important; right: -18px !important; background: var(--orange) !important; color: var(--white) !important;
+  font-family: var(--font-display) !important; font-weight: 800 !important; font-size: 13px !important; text-align:center !important;
+  width: 108px !important; height: 108px !important; border-radius: 50% !important; display:flex !important; align-items:center !important; justify-content:center !important;
+  box-shadow: var(--shadow-pop) !important; transform: rotate(9deg) !important; line-height:1.3 !important; padding: 6px !important;
+  animation: wobble 5s ease-in-out infinite !important;
+}
+@keyframes wobble{ 0%,100%{ transform: rotate(9deg); } 50%{ transform: rotate(-4deg); } }
+.story .eyebrow{ background: var(--blue-pale) !important; color: var(--blue-dark) !important; }
+.story h2{ font-size: clamp(26px,3.6vw,36px) !important; font-weight: 800 !important; margin-bottom: 20px !important; }
+.story p{ color: var(--ink-soft) !important; font-size: 16.5px !important; margin-bottom: 16px !important; }
+.story blockquote{
+  margin-top: 24px !important; padding: 22px 26px !important; background: var(--white) !important; border-radius: var(--radius-md) !important;
+  border-left: 6px solid var(--yellow) !important; font-family: var(--font-display) !important; font-weight: 600 !important;
+  font-size: 20px !important; color: var(--ink) !important; box-shadow: var(--shadow-soft) !important;
+}
+
+/* ============================================================
+   GUARANTEE
+   ============================================================ */
+.guarantee{ background: var(--white) !important; }
+.guarantee-box{
+  max-width: 780px !important; margin: 0 auto !important; text-align:center !important;
+  background: linear-gradient(135deg, var(--green-pale), var(--blue-pale)) !important;
+  border-radius: var(--radius-lg) !important; padding: 56px 44px !important; box-shadow: var(--shadow-soft) !important;
+}
+.guarantee-icon{
+  width: 250px !important; height:250px !important; border-radius:50% !important; background: var(--white) !important; 
+  display:flex !important; align-items:center !important; justify-content:center !important; margin: 0 auto 22px !important;
+  box-shadow: var(--shadow-pop) !important; overflow: hidden !important;
+}
+.guarantee-icon img { width: 90% !important; height: 90% !important; object-fit: contain !important; border-radius: 50% !important; }
+@keyframes pulseSoft{ 0%,100%{ box-shadow: 0 0 0 0 rgba(63,184,120,0.35); } 50%{ box-shadow: 0 0 0 16px rgba(63,184,120,0); } }
+.guarantee-box h2{ font-size: 28px !important; font-weight: 800 !important; margin-bottom: 16px !important; }
+.guarantee-box p{ color: var(--ink-soft) !important; font-size: 17px !important; max-width: 560px !important; margin: 0 auto !important; }
+
+/* ============================================================
+   OFFER
+   ============================================================ */
+.offer{ background: linear-gradient(180deg, var(--white), var(--yellow-pale)) !important; }
+.offer .eyebrow{ background: var(--red-pale) !important; color: var(--red-deep) !important; }
+.offer-card{
+  max-width: 760px !important; margin: 0 auto !important; background: var(--white) !important; border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-pop) !important; overflow:hidden !important; border: 3px solid var(--ink) !important;
+}
+.offer-top{ padding: 40px 40px 8px !important; text-align:center !important; }
+.offer-top h3{ font-size: 24px !important; font-weight: 800 !important; margin-bottom: 6px !important; }
+.offer-top p{ color: var(--ink-soft) !important; font-size: 15px !important; margin-bottom: 22px !important; }
+.price-row{ display:flex !important; align-items:baseline !important; justify-content:center !important; gap: 16px !important; margin-bottom: 6px !important; flex-wrap: wrap !important; }
+.price-old{ font-size: 22px !important; color: var(--ink-soft) !important; text-decoration: line-through !important; font-weight: 700 !important; }
+.price-new{ font-family: var(--font-display) !important; font-size: 52px !important; font-weight: 800 !important; color: var(--red-deep) !important; }
+.price-badge{
+  display:inline-block !important; background: var(--red) !important; color: var(--white) !important; font-weight: 800 !important;
+  font-size: 13px !important; padding: 6px 14px !important; border-radius: 999px !important; margin-bottom: 22px !important;
+  animation: pop 1.8s ease-in-out infinite !important;
+}
+@keyframes pop{ 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.06); } }
+.includes{ padding: 0 40px 30px !important; border-top: 2px dashed var(--yellow) !important; margin-top: 12px !important; padding-top: 26px !important; }
+.includes li{
+  display:flex !important; gap: 14px !important; align-items:flex-start !important; padding: 12px 0 !important;
+  border-bottom: 1px solid var(--cream) !important; font-size: 15px !important;
+}
+.includes li:last-child{ border-bottom:none !important; }
+.includes .ico{ font-size: 20px !important; flex-shrink:0 !important; }
+.includes b{ font-weight: 800 !important; }
+.includes .val{ margin-left:auto !important; color: var(--green-dark) !important; font-weight: 800 !important; font-size: 13.5px !important; white-space:nowrap !important; }
+.offer-bottom{ background: var(--cream) !important; padding: 30px 40px 40px !important; text-align:center !important; }
+.offer-fine{ margin-top: 16px !important; font-size: 13px !important; color: var(--ink-soft) !important; display:flex !important; gap:16px !important; justify-content:center !important; flex-wrap:wrap !important; }
+
+/* ============================================================
+   FAQ - SIMPLIFIED ANIMATION (synchronized)
+   ============================================================ */
+.faq{ background: var(--white) !important; }
+.faq .eyebrow{ background: var(--blue-pale) !important; color: var(--blue-dark) !important; }
+.faq-list{ max-width: 760px !important; margin: 0 auto !important; display:flex !important; flex-direction:column !important; gap: 14px !important; }
+.faq-item{ 
+  border: 2px solid var(--cream) !important; 
+  border-radius: var(--radius-md) !important; 
+  overflow:hidden !important; 
+  background: var(--white) !important; 
+  transition: border-color .3s ease !important; 
+}
+.faq-item.open{ border-color: var(--yellow) !important; }
+.faq-q{
+  width:100% !important; 
+  display:flex !important; 
+  align-items:center !important; 
+  justify-content:space-between !important; 
+  gap: 16px !important;
+  padding: 22px 26px !important; 
+  text-align:left !important; 
+  font-family: var(--font-display) !important; 
+  font-weight: 700 !important; 
+  font-size: 16.5px !important;
+}
+.faq-q .plus{
+  flex-shrink:0 !important; 
+  width: 32px !important; 
+  height:32px !important; 
+  border-radius:50% !important; 
+  background: var(--yellow-pale) !important; 
+  color: var(--orange-deep) !important;
+  display:flex !important; 
+  align-items:center !important; 
+  justify-content:center !important; 
+  font-size: 20px !important; 
+  font-weight: 800 !important;
+  transition: transform .3s ease, background .3s ease, color .3s ease !important;
+}
+.faq-item.open .faq-q .plus{ 
+  transform: rotate(135deg) !important; 
+  background: var(--orange) !important; 
+  color: var(--white) !important; 
+}
+.faq-a{ 
+  max-height:0 !important; 
+  overflow:hidden !important; 
+  transition: max-height .3s ease !important; 
+}
+.faq-a p{ 
+  padding: 0 26px 24px !important; 
+  color: var(--ink-soft) !important; 
+  font-size: 15px !important; 
+}
+.faq-item.open .faq-a{ 
+  max-height: 200px !important; 
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{
+  background: radial-gradient(circle at 20% 20%, var(--blue) 0%, var(--blue-dark) 55%, #144a80 100%) !important;
+  color: var(--white) !important; text-align:center !important; position:relative !important; overflow:hidden !important;
+}
+.final-cta h2{ color: var(--white) !important; font-size: clamp(28px,4.4vw,30px) !important; font-weight: 800 !important; margin-bottom: 20px !important; }
+.final-cta p{ max-width: 800px !important; margin: 0 auto 34px !important; font-size: 25px !important; opacity: .92 !important; }
+.final-cta .btn-primary{ box-shadow: 0 14px 30px -6px rgba(0,0,0,0.4) !important; }
+.final-cta .float-star{ position:absolute !important; font-size: 30px !important; opacity:.5 !important; animation: tileFloat 5s ease-in-out infinite !important; }
+
+/* Стилове за новия CTA (преместен от стария final-cta) */
+.cta-new {
+  background: linear-gradient(135deg, var(--blue-pale), var(--green-pale)) !important;
+  text-align:center !important;
+  padding: 60px 0 !important;
+}
+.cta-new h2 {
+  color: var(--ink) !important;
+  font-size: clamp(28px, 4vw, 42px) !important;
+  font-weight: 800 !important;
+  margin-bottom: 20px !important;
+}
+.cta-new p {
+  color: var(--ink-soft) !important;
+  font-size: 18px !important;
+  max-width: 700px !important;
+  margin: 0 auto 30px !important;
+}
+.cta-new .btn-primary {
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2) !important;
+}
+
+/* Стилове за финалната CTA (новата структура) */
+.final-cta .container {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: 0 24px !important;
+}
+.final-cta .display {
+  font-size: clamp(30px, 5vw, 30px) !important;
+  font-weight: 800 !important;
+  color: var(--white) !important;
+  margin-bottom: 30px !important;
+}
+.final-cta .btn-main {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--orange), var(--red));
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 14px 30px -6px rgba(0,0,0,0.4);
+  transition: transform .25s ease;
+}
+.final-cta .btn-main:hover { transform: translateY(-3px); }
+.final-cta .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* ============================================================
+   BUY FOR FRIENDS SECTION
+   ============================================================ */
+.friends-offer{ background: var(--cream) !important; }
+.friends-grid{ display:grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 30px !important; max-width: 800px !important; margin: 0 auto !important; }
+.friend-card{
+  background: var(--white) !important; border-radius: var(--radius-lg) !important; padding: 40px 30px !important;
+  text-align:center !important; box-shadow: var(--shadow-soft) !important; border: 2px solid var(--blue-pale) !important;
+  position: relative !important; transition: transform .3s ease, box-shadow .3s ease !important;
+}
+.friend-card:hover{ transform: translateY(-8px) !important; box-shadow: var(--shadow-pop) !important; }
+.friend-card.popular{ border-color: var(--orange) !important; }
+.friend-badge{
+  position:absolute !important; top:-15px !important; left:50% !important; transform: translateX(-50%) !important;
+  background: var(--orange) !important; color: var(--white) !important; font-family: var(--font-display) !important;
+  font-weight:700 !important; font-size: 14px !important; padding: 8px 20px !important; border-radius: 999px !important;
+  box-shadow: var(--shadow-soft) !important; white-space: nowrap !important;
+}
+.friend-card h3{ font-size: 24px !important; margin-bottom: 10px !important; }
+.friend-card .price-old{ font-size: 20px !important; }
+.friend-card .price-new{ font-family: var(--font-display) !important; font-size: 48px !important; font-weight:800 !important; color: var(--red-deep) !important; }
+.friend-card p{ color: var(--ink-soft) !important; margin-bottom: 25px !important; }
+.friend-card .btn{ background: var(--green) !important; color: var(--white) !important; box-shadow: 0 10px 20px -5px rgba(63,184,120,0.4) !important; }
+.friend-card.popular .btn{ background: linear-gradient(135deg, var(--orange), var(--red)) !important; box-shadow: 0 10px 20px -5px rgba(241,80,62,0.4) !important; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{ background: var(--ink) !important; color: rgba(255,255,255,0.75) !important; padding: 46px 0 30px !important; }
+footer .wrap{ display:flex !important; flex-wrap:wrap !important; align-items:center !important; justify-content:space-between !important; gap: 18px !important; }
+footer .f-logo{ font-family: var(--font-display) !important; font-weight: 800 !important; color: var(--white) !important; font-size: 18px !important; }
+footer nav{ display:flex !important; flex-wrap:wrap !important; gap: 26px !important; }
+footer nav a{ font-size: 14px !important; transition: color .2s ease !important; }
+footer nav a:hover{ color: var(--yellow) !important; }
+footer .copy{ width:100% !important; text-align:center !important; font-size: 12.5px !important; margin-top: 24px !important; opacity: .6 !important; }
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal{ opacity: 0 !important; transform: translateY(28px) !important; transition: opacity .7s ease, transform .7s ease !important; }
+.reveal.in{ opacity: 1 !important; transform: translateY(0) !important; }
+.reveal-stagger.in .r-child{ opacity:1 !important; transform: translateY(0) !important; }
+.r-child{ opacity:0 !important; transform: translateY(20px) !important; transition: opacity .6s ease, transform .6s ease !important; }
+.r-child:nth-child(1){ transition-delay: .05s !important; }
+.r-child:nth-child(2){ transition-delay: .15s !important; }
+.r-child:nth-child(3){ transition-delay: .25s !important; }
+.r-child:nth-child(4){ transition-delay: .35s !important; }
+.r-child:nth-child(5){ transition-delay: .45s !important; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+  html{ scroll-behavior: auto !important; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 980px){
+  .hero h1{ font-size: clamp(28px, 7vw, 40px) !important; }
+  .hero-visual{ max-width: 700px !important; margin-bottom: 30px !important; }
+  .pain-grid{ grid-template-columns: repeat(2,1fr) !important; }
+  .gallery{ grid-template-columns: repeat(3,1fr) !important; }
+  .acronym{ grid-template-columns: repeat(3,1fr) !important; }
+  .benefit-grid{ grid-template-columns: 1fr !important; }
+  .story .wrap{ grid-template-columns: 1fr !important; }
+  .story-photo{ max-width: 320px !important; margin: 0 auto !important; }
+
+  .how-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .game-demo {
+    min-height: 300px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .game-board {
+    width: 260px;
+    height: 260px;
+  }
+  .game-board .tile {
+    font-size: 22px;
+    border-radius: 12px;
+  }
+  .game-ball {
+    width: 40px;
+    height: 40px;
+  }
+  .game-photo {
+    width: 150px;
+  }
+  .game-photo img, .game-photo.img-error {
+    height: 160px;
+  }
+  .steps-vertical::before {
+    left: 22px;
+  }
+  .step-vertical .num {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px){
+  body{ font-size: 16px !important; }
+  .section-pad{ padding: 66px 0 !important; }
+  .wrap{ padding: 0 18px !important; }
+  .header-cta{ display:none !important; }
+  .hero{ padding: 40px 0 60px !important; }
+  .hero h1{ font-size: 28px !important; margin-bottom: 20px !important; }
+  .hero-visual{ max-width: 100% !important; margin-bottom: 24px !important; }
+  .hero p.lead{ font-size: 16px !important; }
+  .pain-grid{ grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
+  .pain-card{ padding: 20px 14px !important; }
+  .gallery{ grid-template-columns: 1fr !important; }
+  .acronym{ grid-template-columns: repeat(2,1fr) !important; }
+  .acr-tile{ height: 160px !important; }
+  .price-new{ font-size: 40px !important; }
+  .includes{ padding-left: 22px !important; padding-right: 22px !important; }
+  .offer-top, .offer-bottom{ padding-left: 22px !important; padding-right: 22px !important; }
+  .btn{ width: 100% !important; }
+  .hero-ctas{ flex-direction: column !important; }
+  footer .wrap{ flex-direction: column !important; text-align:center !important; }
+  footer nav{ justify-content:center !important; }
+
+  .game-demo { min-height: 220px; }
+  .game-board { width: 200px; height: 200px; }
+  .game-board .tile { font-size: 18px; border-radius: 10px; }
+  .game-ball { width: 32px; height: 32px; }
+  .game-photo { width: 120px; }
+  .game-photo img, .game-photo.img-error { height: 130px; }
+
+  .friends-grid{ grid-template-columns: 1fr !important; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Към съдържанието</a>
+
+<!-- ============================================================ HEADER ============================================================ -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="#hero" class="logo"><img src="https://content.app-sources.com/s/161491553052563671/uploads/Images/Logo_Mechi_copy-8535611.png" class="logo-mechi"> <span>ЗАЕДНО</span></a>
+    <a href="#offer" class="btn btn-primary header-cta">Вземи играта</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ 1. HERO ============================================================ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <span class="eyebrow hero-eyebrow">специално За родители на деца от 5 до 8 години</span>
+    <h1>Детето ти ще се научи лесно да чете<br><span class="hl">докато се смее и играе</span></h1>
+
+    <p class="lead"><b>Без сълзи над буквара. Без напрежение. Само 15 минути игра ЗАЕДНО на ден — и след 30 дни ще видиш резултата.</b></p>
+
+    <!-- Изображение (без рамка, прозрачно) -->
+    <div class="hero-visual">
+        <img
+          src="https://content.app-sources.com/s/161491553052563671/uploads/Images/IGRA_2026_v_copy-8354542.png"
+          alt="Играта „ЧЕТЕНЕТО научавам, докато се забавлявам“ — продуктова снимка"
+          class="hero-img"
+          width="6176"
+          height="4692"
+          onerror="this.classList.add('img-error'); this.parentElement.classList.add('img-error');"
+          data-fallback="📷 Снимка на продукта (6176×4692 px)"
+        >
+    </div>
+    <div class="bonusi"><b>+ 7 Бонуса подарък</b></div>
+        <img
+          src="https://content.app-sources.com/s/161491553052563671/uploads/Images/VIZIA_OLL-2_copy-1721439.png"
+          alt=""
+          class="hero-bonus-img"
+          width="6176"
+          height="4692"
+          onerror="this.classList.add('img-error'); this.parentElement.classList.add('img-error');"
+          data-fallback="📷 Снимка на продукта (6176×4692 px)">
+    <div class="hero-ctas">
+     <div class="hero-price-box">
+      <span class="old-price">Редовна цена: 36 €</span>
+      <div class="new-price"><b>само сега 27 €</b></div>
+      <span class="price-note">Спести 9 € + 7 БЕЗПЛАТНИ бонуса на стойност над 20 €</span>
+     </div>
+    </div>
+      <a href="#offer" class="btn btn-primary">Поръчай играта днес с -25%</a>
+    <br>
+    <div class="hero-trust">
+      <span>↩️ 30 дни право на връщане</span>
+      <span>🚚 Доставка с куриер</span>
+      <span>💳 Наложен платеж</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 2. PROBLEM ============================================================ -->
+<section class="problem section-pad" id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Проблемът</span>
+      <h2>Познато ли ти е това?</h2>
+      <p>Детето ти знае азбуката, но чете буква по буква вместо по срички.<br> Губи търпение, отказва да отвори книжка и ти казва „Не искам да чета!“.<br> Опитвал си какво ли не — но нищо не помага.</p>
+    </div>
+    <div class="pain-grid reveal reveal-stagger">
+      <div class="pain-card r-child">
+        <span class="icon">📖</span>
+        <h3>Знае буквите,<br> но не ги свързва<br> в срички</h3>
+        <p>Всеки опит да прочете нещо се превръща в напрежение, сълзи и отказ.</p>
+      </div>
+      <div class="pain-card r-child">
+        <span class="icon">💬</span>
+        <h3>„Не искам да чета!“</h3>
+        <p>Избягва всяко упражнение с четене. Домашното се превръща в ежедневна битка.</p>
+      </div>
+      <div class="pain-card r-child">
+        <span class="icon">😔</span>
+        <h3>Чувстваш се безпомощен</h3>
+        <p>Купил си книги, помагала, тетрадки — нищо не помага. Обвиняваш се, но не знаеш как да му помогнеш.</p>
+      </div>
+      <div class="pain-card r-child">
+        <span class="icon">🏫</span>
+        <h3>Изостава в клас</h3>
+        <p>Съучениците вече четат гладко, а твоето дете се срамува да вдигне ръка, защото още срича.</p>
+      </div>
+    </div>
+    <p class="bridge-line reveal">Истината е, че вината не е в теб, нито в детето ти.<br> Проблемът е в скучния и еднообразен метод.<br> Повечето деца не се нуждаят от още книжки и помагала — <br><b>нуждаят се от правилния подход.</b></p>
+  </div>
+</section>
+
+<!-- ============================================================ 3. SOLUTION ============================================================ -->
+<section class="solution section-pad" id="solution">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Решението</span>
+      <h2>Методът ЗАЕДНО</h2>
+      <p class="solution-intro" style="margin:0;">ЗАЕДНО превръща упражняването на четенето по срички в любима семейна игра — с топка, цветно табло и състезание между дете и родител. Без разправии, без да седите с часове на учебниците.<br>Само 15 минути игра на ден.</p>
+    </div>
+
+    <div class="gallery reveal reveal-stagger">
+      <div class="photo r-child"><img src="https://content.app-sources.com/s/161491553052563671/uploads/Images/ChatGPT_Image_22.09.2026_г._17_49_31-0099769.png" alt="Табла със срички от играта ЗАЕДНО" onerror="this.parentElement.classList.add('img-error')" data-fallback="📷 Снимка 2"></div>
+      <div class="photo r-child"><img src="https://content.app-sources.com/s/161491553052563671/uploads/Images/ChatGPT_Image_11.09.2026_г._13_14_51-9122187.png" alt="Родител и дете играят със сричковото табло" onerror="this.parentElement.classList.add('img-error')" data-fallback="📷 Снимка 3"></div>
+      <div class="photo r-child"><img src="https://content.app-sources.com/s/161491553052563671/uploads/Images/ChatGPT_Image_11.09.2026_г._13_15_41-9122194.png" alt="Комплектът на играта ЧЕТЕНЕТО научавам, докато се забавлявам" onerror="this.parentElement.classList.add('img-error')" data-fallback="📷 Снимка 4"></div>
+    </div>
+
+<div class="mechanism-title reveal"><span>Разгледай буква по буква — докосни всяко квадратче</span></div>
+    <div class="acronym reveal reveal-stagger">
+      <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">З</span><span class="word">заедно</span></div><div class="acr-face acr-back"><p>Започнете да играете заедно с детето си по 15–20 минути всеки ден — вместо да се мъчите над буквара.</p></div></div></div>
+      <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">А</span><span class="word">активно</span></div><div class="acr-face acr-back"><p>Хвърляте мека топка по цветното табло — сричката, върху която попадне, се прочита на глас.</p></div></div></div>
+      <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">Е</span><span class="word">емоции</span></div><div class="acr-face acr-back"><p>Емоциите се засилват, когато играта се превърне в състезание кой ще измисли повече думи със сричката.</p></div></div></div>
+      <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">Д</span><span class="word">движение</span></div><div class="acr-face acr-back"><p>Докато учите по този начин, забавлявайки се, неусетно се заздравява връзката между теб и детето.</p></div></div></div>
+      <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">Н</span><span class="word">ново знание</span></div><div class="acr-face acr-back"><p>Новият метод ЗАЕДНО помага на детето бързо, лесно и с желание да направи първите си стъпки в четенето.</p></div></div></div>
+      <div class="acr-tile r-child" tabindex="0"><div class="acr-inner"><div class="acr-face acr-front"><span class="letter">О</span><span class="word">отлично</span></div><div class="acr-face acr-back"><p>Отново в дома ти ще има спокойствие — детето чете уверено и с истинско удоволствие.</p></div></div></div>
+    </div>
+    <h3 class="how-title reveal">Как се играе?</h3>
+
+<div class="how-layout">
+  <!-- Лява колона: 5 стъпки вертикално -->
+  <div class="steps-vertical reveal reveal-stagger">
+    <div class="step-vertical r-child">
+      <div class="num">1</div>
+      <div class="step-content">
+        <h4>Хвърляш</h4>
+        <p>Детето хвърля топката и уцелва сричка на таблото.</p>
+      </div>
+    </div>
+    <div class="step-vertical r-child">
+      <div class="num">2</div>
+      <div class="step-content">
+        <h4>Прочиташ</h4>
+        <p>То прочита сричката на глас.</p>
+      </div>
+    </div>
+    <div class="step-vertical r-child">
+      <div class="num">3</div>
+      <div class="step-content">
+        <h4>Търсиш</h4>
+        <p>Дете и родител се надпреварват кой ще се сети за повече думи с тази сричка.</p>
+      </div>
+    </div>
+    <div class="step-vertical r-child">
+      <div class="num">4</div>
+      <div class="step-content">
+        <h4>Печелиш</h4>
+        <p>Който каже повече думи, печели точка.</p>
+      </div>
+    </div>
+    <div class="step-vertical r-child">
+      <div class="num">5</div>
+      <div class="step-content">
+        <h4>Продължаваш</h4>
+        <p>Следващото хвърляне носи нова сричка и ново предизвикателство.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Дясна колона: игрова визуализация -->
+  <div class="game-demo" aria-hidden="true">
+    <div class="game-board">
+      <div class="tile">ВЕ</div><div class="tile">ЧЕ</div><div class="tile">МО</div>
+      <div class="tile">ГА</div><div class="tile">ДА</div><div class="tile">ЧЕ</div>
+      <div class="tile">ТА</div><div class="tile">БЪР</div><div class="tile">ЗО</div>
+    </div>
+    <div class="game-ball" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============================================================ 4. BENEFITS ============================================================ -->
+<section class="benefits section-pad" id="benefits">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Защо работи</span>
+      <h2>Трите предимства на играта ЗАЕДНО</h2>
+    </div>
+    <div class="benefit-grid reveal reveal-stagger">
+      <div class="benefit-card r-child">
+        <div class="badge">🎯</div>
+        <h3>Учи чрез движение и игра</h3>
+        <p>Детето не е принудено да стои мирно и да повтаря. Хвърля, движи се, смее се — и неусетно научава. Активното учене оставя трайни следи в паметта.</p>
+      </div>
+      <div class="benefit-card r-child">
+        <div class="badge">🏆</div>
+        <h3>Изгражда увереност и желание</h3>
+        <p>Детето играе — не се изпитва! Всяка спечелена точка му казва „Мога!" Страхът от четенето се превръща в желание за победа.</p>
+      </div>
+      <div class="benefit-card r-child">
+        <div class="badge">❤️</div>
+        <h3>Сближава родител и дете</h3>
+        <p>15 минути игра всеки ден изграждат специална връзка. Детето ти ще те чака за тази игра — и ще обожава времето прекарано заедно с теб.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 5. STORY / SOCIAL PROOF ============================================================ -->
+<section class="story section-pad" id="story">
+  <div class="wrap">
+    <div class="story-photo reveal">
+      <div class="frame">
+        <img src="images/founder.jpg" onerror="this.parentElement.classList.add('img-error')" data-fallback="📷 Снимка на автора">
+      </div>
+      <div class="sticker">Резултат до 30 дни</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Историята зад ЗАЕДНО</span>
+      <h2>Създадено от майка, за нейния син — сега и за твоето дете</h2>
+      <p>Аз съм учителка и автор на детски книжки, но преди всичко — майка. Като дете самата аз имах трудности с четенето и дълго се страхувах да чета пред съучениците си, за да не се изложа.</p>
+      <p>Когато синът ми започна да се учи да чете, не исках той да преживее същото притеснение. Затова превърнах упражнението в игра с топка и цветно табло със срички.</p>
+      <p>След около 30 дни игра видях как четенето по срички започна да му се отдава леко и естествено. Но най-ценното за мен беше друго - той се увличаше в играта и казваше:</p>
+      <blockquote><b>„Мамо, хайде да играем!“</b> <br>вместо <b>„Не искам да чета.“</b></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 6. GUARANTEE ============================================================ -->
+<section class="guarantee section-pad" id="guarantee">
+  <div class="wrap">
+    <div class="guarantee-box reveal">
+      <div class="guarantee-icon"><img src="https://content.app-sources.com/s/161491553052563671/uploads/Images/ChatGPT_Image_Sep_9_2026_06_51_48_PM-8969816.png" alt="Гаранция за връщане"></div>
+      <h2>Гаранция</h2>
+      <p>Дай ша нс на детето си да се научи лесно да чете с играта. Ако след като се запознаеш с нея прецениш, че не е подходяща за твоето семейство, разполагаш с 30 дни, в които можеш да се възползваш от правото си на връщане.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 7. OFFER ============================================================ -->
+<section class="offer section-pad" id="offer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Специална оферта</span>
+      <h2>Вземи играта „ЧЕТЕНЕТО научавам, докато се забавлявам“</h2>
+    </div>
+    <div class="offer-card reveal">
+      <div class="offer-top">
+        <h3>Комплект ЗАЕДНО + 4 бонуса</h3>
+        <p>Игрови табла, топки и всичко нужно, за да започнете ЗАЕДНО още днес</p>
+        <div class="price-row">
+          <span class="price-old">36 €</span>
+          <span class="price-new">27 €</span>
+        </div>
+        <span class="price-badge">-25% · спестяваш 9 €</span>
+      </div>
+      <ul class="includes">
+        <li><span class="ico">🎲</span><span><b>Игрови комплект ЗАЕДНО</b><br>6 табла със срички по степен на трудност, 2 меки топки, правила и система за точкуване</span></li>
+        <li><span class="ico">📘</span><span><b>Бонус 1:</b> 3 PDF игри</span><span class="val">5 €</span></li>
+        <li><span class="ico">📅</span><span><b>Бонус 2:</b> 3 песни за азбуката и за сричките</span><span class="val">4 €</span></li>
+        <li><span class="ico">🃏</span><span><b>Бонус 3:</b> 30-дневен игрови календар</span><span class="val">5 €</span></li>
+        <li><span class="ico">📖</span><span><b>Бонус 4:</b> "Буквите ОЦВЕТИ" — книжка с буквите</span><span class="val">6,60 €</span></li>
+        <li><span class="ico">🃏</span><span><b>Бонус 5:</b> „Ловци на думи“ — карти с игрови предизвикателства</span><span class="val">5 €</span></li>
+        <li><span class="ico">🃏</span><span><b>Бонус 6:</b> Как да играем — указание</span><span class="val">5 €</span></li>
+      </ul>
+      <div class="offer-bottom">
+        <a href="poruchka.html" class="btn btn-primary btn-block">Вземи играта ЗАЕДНО — 27 €</a>
+        <div class="offer-fine">
+          <span>🚚 Доставка с куриер и наложен платеж</span>
+          <span>↩️ 30 дни право на връщане</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 8. NEW CTA (преместен от стария final-cta) ============================================================ -->
+<section class="cta-new section-pad" id="cta-new">
+  <div class="wrap reveal">
+    <h2>Започнете първата си игра ЗАЕДНО още днес</h2>
+    <p>Не чакай четенето да се превърне в неприятно задължение. Не отлагай, защото проблемът няма да се реши от само себе си. Не е нужно да отделяте часове — само 15 минути, топка, табло със срички и детето, което иска да победи мама или татко.</p>
+    <a href="#offer" class="btn btn-primary">Вземи „ЧЕТЕНЕТО научавам, докато се забавлявам“</a>
+  </div>
+</section>
+
+<!-- ============================================================ 9. FAQ ============================================================ -->
+<section class="faq section-pad" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Въпроси</span>
+      <h2>Често задавани въпроси</h2>
+    </div>
+    <div class="faq-list reveal">
+      <!-- Всички отговори са скрити по подразбиране -->
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Ами ако детето ми вече познава буквите, но чете буква по буква?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Точно за този етап е създадена играта ЗАЕДНО. Тя е следващата стъпка след буквите — учи детето да прави прехода от отделни звуци към цели срички, по естествен и забавен начин.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Ами ако детето ми не иска да учи?<span class="plus">+</span></button>
+        <div class="faq-a"><p>ЗАЕДНО не прилича на учене. Детето хвърля топка, движи се, уцелва табло и се състезава с теб — упражнява четенето, без дори да усети, че учи.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Ами ако не знам как да му помагам?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Не ти трябва педагогическа подготовка. Правилата са прости — хвърляне, прочитане на сричката и търсене на думи. Комплектът включва и кратко ръководство стъпка по стъпка за родителя.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Трябва ли да играем точно 15 минути на ден?<span class="plus">+</span></button>
+        <div class="faq-a"><p>15 минути са препоръчителен минимум, не ограничение. Много деца сами искат да продължат — остави темпото на детето си.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Това просто игра ли е, или има истинска образователна стойност?<span class="plus">+</span></button>
+        <div class="faq-a"><p>И двете. Детето вижда сричката, чете я, чува я, произнася я и я търси в нови думи — упражнение с доказан ефект, скрито във формата на игра.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 10. FINAL CTA (емоционален завършек) ============================================================ -->
+<section class="final-cta section-pad" id="final-cta">
+  <span class="float-star" style="top:14%; left:8%;">✦</span>
+  <span class="float-star" style="top:65%; left:88%;">✦</span>
+  <span class="float-star" style="top:40%; left:80%;">✦</span>
+  <div class="container" style="position:relative; z-index:1 !important;">
+    <p class="reveal visible">
+      Играейки с детето си Вие не просто го учите да чете и се забавлявате, а заедно градите бъдеще. 
+    </p>
+    <h2 class="display reveal visible">
+      Защото най-важният урок<br>може да започне като игра! 🌟
+    </h2>
+    <p class="reveal visible">
+      Целта ни не е само детето да се научи да чете. Искаме четенето да се превърне 
+      в удоволствие и книгите да станат завинаги част от неговия свят.
+    </p>
+    <div class="reveal visible">
+      <a href="poruchka.html" class="btn-main" style="font-size:1.35rem !important; padding:22px 60px !important;">
+        🎯 Вземи „ЧЕТЕНЕТО научавам" + 5 бонуса за 27 €!
+      </a>
+      <p style="margin-top:20px !important; color:rgba(255,255,255,.7) !important; font-size:.88rem !important;">
+        Само 27 € · Доставка с куриер · Наложен платеж · 30-дневна гаранция за връщане
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 11. BUY FOR FRIENDS ============================================================ -->
+<section class="friends-offer section-pad" id="friends-offer">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Сподели забавлението</span>
+      <h2>Вземи играта за приятели с отстъпка</h2>
+      <p>Подари на приятелите си играта, която учи децата да четат с удоволствие. Поръчай 2 или 3 игри и получи специална цена.</p>
+    </div>
+    <div class="friends-grid reveal reveal-stagger">
+      <div class="friend-card r-child">
+        <h3>2 игри ЗАЕДНО</h3>
+        <div class="price-row">
+          <span class="price-old">54 €</span>
+          <span class="price-new">49 €</span>
+        </div>
+        <p>Спестяваш 5 €</p>
+        <a href="poruchka.html" class="btn btn-block">Вземи 2 игри</a>
+      </div>
+      <div class="friend-card popular r-child">
+        <span class="friend-badge">🔥 Най-изгодно</span>
+        <h3>3 игри ЗАЕДНО</h3>
+        <div class="price-row">
+          <span class="price-old">81 €</span>
+          <span class="price-new">69 €</span>
+        </div>
+        <p>Спестяваш 12 €</p>
+        <a href="poruchka.html" class="btn btn-block">Вземи 3 игри</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer>
+  <div class="wrap">
+    <span class="f-logo">ЗАЕДНО</span>
+    <span class="copy">За поръчка:</span>
+    <span class="copy"></span>
+    <nav>
+      <a href="obshti-uslovia.html">Общи условия</a>
+      <a href="politika-za-poveritelnost.html">Политика за поверителност</a>
+      <a href="uslovia-za-dostavka.html">Условия за доставка</a>
+    </nav>
+    <span class="copy">© 2026 Мечи за приятели — Четенето научавам, докато се забавлявам. Всички права запазени.</span>
+  </div>
+</footer>
+
+<script>
+// FAQ accordion (независимо отваряне/затваряне)
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.faq-item');
+    var answer = item.querySelector('.faq-a');
+    var isOpen = item.classList.contains('open');
+    
+    if(isOpen){
+      // Затваряме само този елемент
+      item.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      answer.style.maxHeight = '0px';
+    } else {
+      // Отваряме само този елемент
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+      // Задаваме височината според съдържанието за плавна анимация
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+// Acronym tiles: tap-to-flip on touch devices
+document.querySelectorAll('.acr-tile').forEach(function(tile){
+  tile.addEventListener('click', function(){
+    tile.classList.toggle('flipped');
+  });
+});
+
+// Scroll reveal
+if('IntersectionObserver' in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+</script>
+</body>
+</html>
